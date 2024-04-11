@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const VerticalBarChart = ({ months, data, color = "#4F46E5" }) => {
 
-  // Create an array of objects with month names and corresponding data
   const chartData = months?.map((month, index) => ({
     month,
     value: data[index] || 0 // Treat missing data as 0

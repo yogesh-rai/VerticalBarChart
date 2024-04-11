@@ -54,4 +54,4 @@ The VerticalBarChart component accepts the following props:
 
 *  months: It is a required prop. An array of strings representing month labels.
 *  data: It is also a required props. An array of numbers representing data points corresponding to each month.
-*  color: It is an optional prop. A string value of color name or code. It allows to control the color of bars in graph.
+*  color: It is an optional prop. A string value of color name or code. It allows you to control the color of bars in graph.
