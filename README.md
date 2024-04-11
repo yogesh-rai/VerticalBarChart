@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Vertical Bar Chart Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This README provides instructions for importing the Vertical Bar Chart component into an existing React application.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To use the Vertical Bar Chart component, follow these steps:
 
-### `npm start`
+1. Install the necessary dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    ```bash
+    npm install recharts tailwindcss
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+    or
 
-### `npm test`
+    ```bash
+    yarn add recharts tailwindcss
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Copy the `VerticalBarChart.js` file (which is in 'src/components' folder) into your project's `/components` directory.
 
-### `npm run build`
+3. Import the `VerticalBarChart` component into your desired React component:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```jsx
+    import VerticalBarChart from './components/VerticalBarChart';
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Once imported, you can use the `VerticalBarChart` component within your React application. Here's an example of how to use it:
 
-### `npm run eject`
+```jsx
+import React from 'react';
+import VerticalBarChart from './components/VerticalBarChart';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+const App = () => {
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const data = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200];
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    return (
+        <div className="flex justify-center items-center h-screen">
+            <VerticalBarChart months={months} data={data} />
+        </div>
+    );
+};
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+export default App;
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Props
 
-## Learn More
+The VerticalBarChart component accepts the following props:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*  months: It is a required prop. An array of strings representing month labels.
+*  data: It is also a required props. An array of numbers representing data points corresponding to each month.
+*  color: It is an optional prop. A string value of color name or code. It allows to control the color of bars in graph.
